@@ -28,3 +28,29 @@ var simpleSymbols = function(str) {
 	}
 	return true;
 };
+
+
+//Given an arbitrary input string, return the first character that does not appear multiple times in the string.
+
+/*
+- if no repeats return false
+- loop through string, fill an object with value incrementing as each character is found multiple times
+- loop through object finding first item with '1' value and return
+*/
+
+var noRepeats = function(str) {
+  var lookup = {};
+  for (var i = 0; i < str.length; i++) {
+    if (!lookup[str[i]]) {
+      lookup[str[i]] = 1;
+    } else {
+      lookup[str[i]] += 1;
+    }
+  };
+  for (key in lookup) {
+    if (lookup[key] === 1) {
+      return key;
+    }
+  }
+  return false;
+}
