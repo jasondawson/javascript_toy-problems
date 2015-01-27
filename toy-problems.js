@@ -68,3 +68,31 @@ var ABCheck = function(str) {
 	}
 	return 'false';
 }
+
+
+//Write a function that generates an array of integers of the Fibonacci sequence, up to i = 100. The Fibonacci sequence is defined by: Fn = Fn-1 + Fn-2, which means to find Fn you add the previous two numbers. The first two numbers in the sequence are 0 and 1. Write a function to check if a given number is in the Fibonacci sequence, return "yes" if it is, if not return the string "no".
+
+var fibonacci = function(num) {
+	var fibArr = [0, 1];
+	for (var i = 2; i <= num; i++) {
+		nextNum = fibArr[i - 1] + (fibArr[i - 2]);
+		fibArr.push(nextNum);
+		console.log(nextNum);
+	}
+}
+
+var isFibonacciNum = function(num) {
+	var testArr = [0, 1];
+	if (num === 0 || num === 1) return "yes";
+	while (testArr[testArr.length - 1] < num) {
+		for (var i = 2; i <= num; i++) {
+			nextNum = testArr[i - 1] + testArr[i - 2];
+			if (nextNum === num) {
+				return "yes";
+			}
+			testArr.push(nextNum);
+		}
+	}
+	return "no";
+}
+
