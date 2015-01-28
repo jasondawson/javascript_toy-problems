@@ -96,3 +96,26 @@ var isFibonacciNum = function(num) {
 	return "no";
 }
 
+/*Find the only item that occurs an even number of times in an array. If there is more than one item that occurs an even number of times, just return one of them. If there are no items that occur an even number of times, return null. 
+var onlyEven = evenOccurence([1,6,2,4,4,5,6,8,9,6]);
+console.log(onlyEven); //4
+
+var onlyEven = evenOccurence([1,1,3,4,1]);
+console.log(onlyEven); //null*/
+
+var evenOccurence = function(arr) {
+	var lookup = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (!(lookup[arr[i]])) {
+			lookup[arr[i]] = 1;
+		} else {
+			lookup[arr[i]]++;
+		}
+	}
+	for (var key in lookup) {
+		if (lookup[key] % 2 === 0) {
+			return key;
+		}
+	}
+	return null;
+}
