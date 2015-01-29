@@ -119,3 +119,31 @@ var evenOccurence = function(arr) {
 	}
 	return null;
 }
+
+//Write a function that accepts a number, n, and returns the nth Fibonacci number. Use a recursive solution to this problem; if you finish with time left over, implement an iterative solution.
+
+//iterative
+var nthFibonacci = function(num) {
+	//0, 1, 1, 2, 3, 5
+	var fibArr = [0, 1];
+	var total = 0;
+	if (num === 1) return 0;
+	if (num === 2) return 1;
+	if (num > 2) {
+		for (var i = 2; i < num; i++) {
+			nextNum = fibArr[i - 1] + fibArr[i - 2];
+			fibArr.push(nextNum);
+		}
+	}
+	return fibArr[fibArr.length - 1];
+}
+
+//recursive
+var nthFibrec = function(num) {
+	//fn = fn-1 + Fn-2
+	if (num === 1) return 0;
+	if (num === 2) return 1;
+	if (num > 2) {
+	return nthFibrec(num - 1) + nthFibrec(num - 2);
+	}
+}
