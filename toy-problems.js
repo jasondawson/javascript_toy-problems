@@ -147,3 +147,18 @@ var nthFibrec = function(num) {
 	return nthFibrec(num - 1) + nthFibrec(num - 2);
 	}
 }
+
+
+// Create a function that takes in three strings as parameters(str, x, y). The goal is to swap all 'x' characters for 'y' characters.
+// swapper('some string', 's', 'z') // returns 'zome ztring'
+
+var swapper = function(str, x, y) {
+	var tempArr = str.split('');
+	for (var i = 0; i < str.length; i++) {
+		if (tempArr[i] === x {
+			tempArr[i] = y;
+		}
+	}
+	str = tempArr.join('');
+	return str;
+}
