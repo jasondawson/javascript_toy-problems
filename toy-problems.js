@@ -162,3 +162,15 @@ var swapper = function(str, x, y) {
 	str = tempArr.join('');
 	return str;
 }
+
+
+//Write a function that accepts a multi dimensional array and returns a flattened version.
+//flatten([1, 2, [3, [4], 5, 6], 7]) //returns [1, 2, 3, 4, 5, 6, 7]
+
+var flatten = function(arr) {
+	var newArr = arr.toString().split(',');
+	for (var i = 0; i < newArr.length; i++) {
+		newArr[i] = Number(newArr[i]);
+	}
+	return newArr;
+}
