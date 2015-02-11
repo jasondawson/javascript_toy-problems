@@ -291,3 +291,28 @@ var objectArraySearch = function(arr, str) {
         }
         return tempArr;
     }
+
+
+//Create a function that can only be invoked once
+//onlyOnce() returns something
+//onlyOnce() undefined
+
+
+var onlyOnce = function (num1, num2) {
+	if (!onlyOnce.invoked) {
+		onlyOnce.invoked = true;
+		//do something
+		return num1 + num2;
+	}
+}
+
+var oneTime = (function(){
+	var invoked = false;
+	return function(num1, num2) {
+		if (!invoked) {
+			invoked = true;
+			//do Something
+			return num1 + num2;
+		}
+	}
+})();
