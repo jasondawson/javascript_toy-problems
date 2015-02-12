@@ -324,10 +324,10 @@ var counter = getCounter();
 //counter() //6
 //counter() //8
 
-var getCounter = function() {
+var getCounter = function(num) {
 	var count = 0;
 	return function() {
-		count += 2;
+		count += num;
 		return count;
 	}
 }
